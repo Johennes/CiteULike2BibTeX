@@ -1,26 +1,17 @@
 #!/bin/bash
 
-## Settings
+##############################################################################
+## Standard CiteULike settings
 
-# CiteULike username
+# Default CiteULike username (can be overridden on CLI)
 USER=hennes
 
-# Fields to be erased from the library
-BLACKLIST=("abstract" "citeulike" "keywords" "month" "posted-at" "priority")
-
-# Output file name
-if [ $1 ]; then
-    OUT=$1
-else
-    OUT=main.bib
-fi
-
-# Username prefix (0 = False / 1 = True)
+# Prefix BibTeX keys with username (0 = False / 1 = True)
 PREFIX=0
 
 # Bibtex key type
-#   0 = personal otherwise numeric
-#   4 = personal otherwise AuthorYearTitle
+#   0 = personal, otherwise numeric
+#   4 = personal, otherwise AuthorYearTitle
 #   1 = numeric
 #   2 = export only personal keys
 #   3 = export both keys
@@ -38,14 +29,71 @@ ESCAPE=1
 #   2 = smart wrap words
 WRAP=1
 
+##############################################################################
+## Additional settings
+
+# Default output filename (can be overridden on CLI)
+OUT=main.bib
+
+# Fields to be erased from the library
+BLACKLIST=("abstract" "citeulike" "keywords" "month" "posted-at" "priority")
+
 # Remove trailing + on pages fields (0 = False / 1 = True)
 STRIPPLUS=1
 
 # Unescape math commands (0 = False / 1 = True)
 UNDOMATH=1
 
+##############################################################################
+## Script action
 
-## Action
+function usage
+{
+    echo "USAGE: citeulike2bibtex.sh [OPTION]"
+    echo
+    echo "Options:"
+    echo "  -u, --user     CiteULike username"
+    echo "  -o, --output   Output filename"
+    echo "  -h, --help     Display this message and exit"
+    echo
+}
+
+function error
+{
+    echo "ERROR: "$1
+    exit 1
+}
+
+# Parse CLI options
+while [ "$1" != "" ]; do
+    case $1 in
+        -u | --user )
+            shift
+            USER=$1
+            ;;
+        -o | --output )
+            shift
+            OUT=$1
+            ;;
+        -h | --help )
+            usage
+            exit
+            ;;
+        * )
+            usage
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+# Check arguments
+if [ -z "$USER" ]; then
+    error "No username supplied"
+fi
+if [ -z "$OUT" ]; then
+    error "No output filename supplied"
+fi
 
 # Download bibtex file
 wget "http://www.citeulike.org/bibtex/user/$USER?do_username_prefix=$PREFIX"\
