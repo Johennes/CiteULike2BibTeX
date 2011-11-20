@@ -9,7 +9,11 @@ USER=hennes
 BLACKLIST=("abstract" "citeulike" "keywords" "month" "posted-at" "priority")
 
 # Output file name
-OUT=main.bib
+if [ $1 ]; then
+    OUT=$1
+else
+    OUT=main.bib
+fi
 
 # Username prefix (0 = False / 1 = True)
 PREFIX=0
