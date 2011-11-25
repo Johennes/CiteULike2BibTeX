@@ -1,6 +1,10 @@
 #!/bin/bash
 
 ##############################################################################
+## Copyright 2011 Johannes Marbach. All rights reserved.
+## See the LICENSE file for details.
+
+##############################################################################
 ## Standard CiteULike settings
 
 # Default CiteULike username (can be overridden on CLI)
