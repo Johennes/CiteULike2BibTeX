@@ -1,6 +1,8 @@
 #!/bin/bash
 
 ##############################################################################
+## citeulike2bibtex.sh
+##
 ## Copyright 2011 Johannes Marbach. All rights reserved.
 ## See the LICENSE file for details.
 
