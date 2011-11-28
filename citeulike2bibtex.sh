@@ -55,7 +55,7 @@ UNDOMATH=1
 
 function usage
 {
-    echo "USAGE: citeulike2bibtex.sh [OPTION]"
+    echo "USAGE: citeulike2bibtex.sh [OPTION...]"
     echo
     echo "Options:"
     echo "  -u, --user     CiteULike username"

@@ -7,7 +7,7 @@ citeulike2bibtex.sh
 This is a shell script that downloads a user's CiteULike library to a BibTeX
 file. The script relies on wget, mktemp, awk and sed.
 
-USAGE: citeulike2bibtex.sh [OPTION]
+USAGE: citeulike2bibtex.sh [OPTION...]
 
 Options:
   -u, --user     CiteULike username
