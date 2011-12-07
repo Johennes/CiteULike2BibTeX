@@ -2,7 +2,7 @@
 // Copyright 2011 Johannes Marbach. All rights reserved.
 // See the LICENSE file for details.
 
-citeulike2bibtex.sh
+CiteULike2BibTeX
 
 This is a shell script that downloads a user's CiteULike library to a BibTeX
 file. The script relies on wget, mktemp, awk and sed.
