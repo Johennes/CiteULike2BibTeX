@@ -124,6 +124,8 @@ fi
 
 # Unescape math commands
 if [ $UNDOMATH = 1 ]; then
-    sed -i 's/\\\$/\$/g' $OUT
-    sed -i 's/\\_/_/g' $OUT
+    #sed -i 's/\\\$/\$/g' $OUT
+    sed -i 's/\\\$\(.*\)\\\$/\$\1\$/g' $OUT
+    sed -i 's/\(\$.*\)\\_\(.*\$\)/\1_\2/g' $OUT
+    #sed -i 's/\\_/_/g' $OUT
 fi
