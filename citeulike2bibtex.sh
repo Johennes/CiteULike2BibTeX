@@ -123,7 +123,7 @@ if [ $STRIPPLUS = 1 ]; then
 fi
 
 # Unescape math commands
-if [ $STRIPPLUS = 1 ]; then
+if [ $UNDOMATH = 1 ]; then
     sed -i 's/\\\$/\$/g' $OUT
     sed -i 's/\\_/_/g' $OUT
 fi
