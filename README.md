@@ -1,6 +1,8 @@
 CiteULike2BibTeX
 ================
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A CiteULike to BibTeX conversion tool
 
 This is a shell script that downloads a user's CiteULike library to a BibTeX
@@ -8,7 +10,7 @@ file. The script relies on wget, mktemp, awk and sed.
 
 ### Usage
 
-``` shell
+```text
 citeulike2bibtex.sh [OPTION...]
 
 Options:
@@ -18,10 +20,10 @@ Options:
 ```
 
 CiteULike's export configuration can be adapted in the script's
-'Standard CiteULike settings' section. In addition, the script offers a number
-of processing options which can be configured in its 'Additional settings'
-section. These include
+_Standard CiteULike settings_ section. In addition, the script offers a number
+of processing options which can be configured in its _Additional settings_
+section. These include:
 
-* blacklisting unneeded BibTeX keys
-* stripping trailing '+' characters on pages fields
-* unescaping math commands
+* Blacklisting unneeded BibTeX keys
+* Stripping trailing '+' characters on pages fields
+* Unescaping math commands
