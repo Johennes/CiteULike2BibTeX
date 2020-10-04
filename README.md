@@ -1,8 +1,6 @@
 CiteULike2BibTeX
 ================
 
-*Mirrors: [GitHub] ~ [GitLab]*
-
 A CiteULike to BibTeX conversion tool
 
 This is a shell script that downloads a user's CiteULike library to a BibTeX
@@ -27,6 +25,3 @@ section. These include:
 * Blacklisting unneeded BibTeX keys
 * Stripping trailing '+' characters on pages fields
 * Unescaping math commands
-
-[GitHub]: https://github.com/Johennes/CiteULike2BibTeX
-[GitLab]: https://gitlab.com/cherrypicker/CiteULike2BibTeX
